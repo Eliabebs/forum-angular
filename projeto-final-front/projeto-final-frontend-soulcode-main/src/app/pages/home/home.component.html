@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="container py-2 home">
+  <div class="row">
+    <div class="col-12 w-100">
+      <question-form (send)="saveQuestion($event)"></question-form>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-12">
+      <hr>
+      <h1 class="fw-normal text-center">Outras Perguntas</h1>
+    </div>
+  </div>
+  <div class="row" *ngIf="questions$ | async as questions">
+    <div class="col-12 d-flex flex-column">
+      <question-card
+        *ngFor="let question of questions"
+        class="mt-4"
+        [title]="question.title"
+        [content]="question.body"
+        creationDate="{{question.createdAt}}"
+        accessLink="{{question.accessLink}}"
+        [showLink]="true"
+      >
+      </question-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body text-center bg-dark text-white">
+    <form>
+      <div class="row">
+        <div class="col-12">
+          <label for="answer" class="form-label fs-5">Responda Aqui</label>
+          <input 
+            type="text" 
+            id="answer" 
+            placeholder="Minha Resposta" 
+            class="form-control"
+            [(ngModel)]="answer"
+            name="answer"
+          >
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="card-footer d-grid">
+    <button class="btn btn-info" (click)="emitSendEvent()">Enviar</button>
+  </div>
+</div>
